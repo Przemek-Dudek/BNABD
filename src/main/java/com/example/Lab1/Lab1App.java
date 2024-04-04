@@ -41,9 +41,9 @@ public class Lab1App {
 
             System.out.printf("\n");
 
-            System.out.println("Customers found with findByFirstName(Jan):");
+            System.out.println("Customers found with findByFirstName(Janusz):");
             System.out.println("Id\tName\tLastName\tSalary\tEmployment date");
-            employeeRepository.findByFirstName("Jan").forEach(Employee::print);
+            employeeRepository.findByFirstName("Janusz").forEach(Employee::print);
 
             //Zad 2
             System.out.printf("\nZAD 2\n");
