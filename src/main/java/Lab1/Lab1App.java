@@ -16,7 +16,6 @@ public class Lab1App {
         SpringApplication.run(Lab1App.class, args);
     }
 
-    private static final Logger log = LoggerFactory.getLogger(Lab1App.class);
 
     @Bean
     public CommandLineRunner runner(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
@@ -35,20 +34,20 @@ public class Lab1App {
             //Zad 1
             System.out.printf("ZAD1\n");
 
-            System.out.println("Customers found with findAll():");
+            System.out.println("Employees found with findAll():");
             System.out.println("Id\tName\tLastName\tSalary\tEmployment date");
             employeeRepository.findAll().forEach(Employee::print);
 
             System.out.printf("\n");
 
-            System.out.println("Customers found with findByFirstName(Janusz):");
+            System.out.println("Employees found with findByFirstName(Janusz):");
             System.out.println("Id\tName\tLastName\tSalary\tEmployment date");
             employeeRepository.findByFirstName("Janusz").forEach(Employee::print);
 
             //Zad 2
             System.out.printf("\nZAD 2\n");
 
-            System.out.println("Customers found with lastname starting with letter 'K'");
+            System.out.println("Employees found with lastname starting with letter 'K'");
             System.out.println("Id\tName\tLastName\tSalary\tEmployment date");
             employeeRepository.findAllWhereNameLike("K%").forEach(Employee::print);
 
@@ -71,9 +70,8 @@ public class Lab1App {
 
             departmentRepository.findAll().forEach(Department::print);
 
-
-            departmentRepository.deleteAll();
-            employeeRepository.deleteAll();
+//            departmentRepository.deleteAll();
+//            employeeRepository.deleteAll();
         };
     }
 }
